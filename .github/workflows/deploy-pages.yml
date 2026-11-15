@@ -1,0 +1,73 @@
+name: Weekly Grant Refresh & Deploy to GitHub Pages
+
+on:
+  schedule:
+    # Runs automatically every 7 days: Mondays at 03:00 UTC (08:45 AM Nepal Time)
+    - cron: "0 3 * * 1"
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      refresh_live_feeds:
+        description: "Poll live grant feeds (NIH, UKRI, Grants.gov, APNIC) & roll forward deadlines"
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-and-weekly-sync"
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run 7-day live grant harvester & deadline lifecycle engine
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_live_feeds == true)
+        run: python3 scripts/weekly_update.py
+
+      - name: Validate grants.json & sync JS bundle
+        run: python3 scripts/sync_and_validate.py
+
+      - name: Commit & push weekly dataset updates to main
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_live_feeds == true)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/grants.json data/grants-data.js data/update-log.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(grants): automated 7-day grant radar refresh ($(date -u +%Y-%m-%d))"
+            git push origin HEAD:main
+          else
+            echo "No dataset changes to commit."
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
