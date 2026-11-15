@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAAMII Grant &amp; Funding Radar — AI, Healthcare &amp; Infrastructure Grants for Nepal</title>
+  <meta
+    name="description"
+    content="Curated research funding portal for NAAMII and researchers in Nepal (LMIC). Track open grants, compute credits, AI infrastructure funds, and global health AI calls."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="brand" id="brandReset" title="Reset filters and return to top">
+        <div class="brand-mark" aria-hidden="true">
+          <span>N</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">NAAMII Grant Radar</span>
+          <span class="brand-subtitle">Nepal · AI, Health &amp; Research Infrastructure</span>
+        </div>
+      </a>
+
+      <nav class="topbar-nav" aria-label="Primary sections">
+        <a href="#explorer" class="nav-link">Grants Explorer</a>
+        <a href="#playbook" class="nav-link">Nepal Eligibility Playbook</a>
+        <a href="#databases" class="nav-link">Live Databases</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button type="button" class="btn btn-outline btn-sm" id="shortlistToggleBtn" aria-pressed="false">
+          <span class="star-icon" aria-hidden="true">★</span>
+          <span>Pipeline</span>
+          <span class="count-pill" id="shortlistCount">0</span>
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" id="openSubmitModalBtn">
+          + Suggest Grant
+        </button>
+        <button
+          type="button"
+          class="btn btn-icon"
+          id="themeToggleBtn"
+          aria-label="Toggle dark and light theme"
+          title="Switch theme"
+        >
+          <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow-row">
+            <span class="eyebrow-badge">NAAMII Research Ecosystem · Nepal (LMIC / STLC / ODA)</span>
+            <span class="auto-sync-pill" id="lastUpdatedBadge" title="GitHub Actions refreshes live feeds and deadlines automatically every 7 days">
+              <span class="sync-dot" aria-hidden="true"></span>
+              <span>Auto-updates every 7d · Last synced: Nov 15, 2026</span>
+            </span>
+          </div>
+          <h1>Funding Intelligence for AI Research, Compute Infrastructure &amp; Global Health in Nepal</h1>
+          <p class="hero-lead">
+            A curated, actionable directory inspired by
+            <a href="https://www.scientifyresearch.org/" target="_blank" rel="noopener noreferrer">ScientifyResearch</a>
+            and built specifically for researchers at
+            <strong>NAAMII (Nepal Applied Mathematics and Informatics Institute for Research)</strong>.
+            Filter international grants by whether a Nepal-based institute can <strong>lead directly</strong>,
+            join an <strong>EU/UK/Swiss/US consortium</strong>, or claim <strong>GPU &amp; cloud compute</strong>.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#explorer" class="btn btn-primary">Explore Curated Calls</a>
+            <button type="button" class="btn btn-outline" id="exportCsvBtn" title="Download currently filtered grants as CSV">
+              ↓ Export Filtered CSV
+            </button>
+            <button type="button" class="btn btn-outline" id="copyMarkdownBtn" title="Copy a formatted Markdown brief for Slack or email">
+              ⎘ Copy Brief for Lab
+            </button>
+          </div>
+        </div>
+
+        <!-- Live KPI Summary Cards -->
+        <div class="kpi-grid" aria-label="Grant statistics quick filters">
+          <button type="button" class="kpi-card" data-kpi-preset="all">
+            <span class="kpi-label">Curated Programs</span>
+            <strong class="kpi-value" id="kpiTotal">--</strong>
+            <span class="kpi-meta">Verified global, regional &amp; national funders</span>
+          </button>
+          <button type="button" class="kpi-card kpi-emerald" data-kpi-preset="open-rolling">
+            <span class="kpi-label">Open &amp; Rolling Now</span>
+            <strong class="kpi-value" id="kpiOpenRolling">--</strong>
+            <span class="kpi-meta">Active Q4 2026 / Q1 2027 &amp; always-open calls</span>
+          </button>
+          <button type="button" class="kpi-card kpi-crimson" data-kpi-preset="direct-nepal">
+            <span class="kpi-label">Direct Nepal Lead + Compute</span>
+            <strong class="kpi-value" id="kpiDirect">--</strong>
+            <span class="kpi-meta">No foreign lead required to apply</span>
+          </button>
+          <button type="button" class="kpi-card kpi-indigo" data-kpi-preset="health-infra">
+            <span class="kpi-label">Health AI &amp; AI Infra</span>
+            <strong class="kpi-value" id="kpiHealthInfra">--</strong>
+            <span class="kpi-meta">Clinical AI, GPUs, cloud &amp; LMIC datasets</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Grants Explorer -->
+  <main id="explorer" class="explorer-section">
+    <div class="container">
+      <!-- Quick Smart Presets -->
+      <div class="presets-bar" role="region" aria-label="Quick filter presets">
+        <span class="presets-label">Quick Lens:</span>
+        <div class="presets-scroll" id="presetChips">
+          <button type="button" class="preset-chip active" data-preset="all">All Grants</button>
+          <button type="button" class="preset-chip" data-preset="open-rolling">● Open &amp; Rolling Now</button>
+          <button type="button" class="preset-chip" data-preset="direct-lead">🇳🇵 NAAMII Direct Lead</button>
+          <button type="button" class="preset-chip" data-preset="healthcare">🏥 Healthcare &amp; Clinical AI</button>
+          <button type="button" class="preset-chip" data-preset="infra-compute">⚡ GPU, Cloud &amp; Datasets</button>
+          <button type="button" class="preset-chip" data-preset="consortium">🤝 EU / UK / Swiss Consortia</button>
+          <button type="button" class="preset-chip" data-preset="fellowships">🎓 Fellowships &amp; Early Career</button>
+        </div>
+      </div>
+
+      <!-- Search + Multi-Facet Filter Panel -->
+      <div class="filter-panel">
+        <div class="search-row">
+          <div class="search-input-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search funder, topic, grant code, or keyword (e.g. Wellcome, ultrasound, GPU, NLP, Horizon, K43)... [Press /]"
+              autocomplete="off"
+              aria-label="Search grants"
+            />
+            <button type="button" class="clear-search-btn hidden" id="clearSearchBtn" aria-label="Clear search">✕</button>
+          </div>
+
+          <div class="view-sort-controls">
+            <div class="select-group">
+              <label for="sortSelect" class="sr-only">Sort grants by</label>
+              <select id="sortSelect" class="control-select">
+                <option value="fit">Sort: Best NAAMII Fit</option>
+                <option value="deadline">Sort: Soonest Deadline</option>
+                <option value="amount-desc">Sort: Highest Funding</option>
+                <option value="direct-first">Sort: Direct Lead First</option>
+                <option value="title">Sort: A → Z</option>
+              </select>
+            </div>
+
+            <div class="view-switcher" role="group" aria-label="Display mode">
+              <button type="button" class="view-btn active" data-view="grid" title="Card Grid View">Cards</button>
+              <button type="button" class="view-btn" data-view="table" title="Compact Table View">Table</button>
+              <button type="button" class="view-btn" data-view="timeline" title="2026–2027 Deadline Roadmap">Timeline</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="facets-grid">
+          <div class="facet-item">
+            <label for="categoryFilter">Domain Pillar</label>
+            <select id="categoryFilter" class="control-select">
+              <option value="all">All Domains</option>
+              <option value="Healthcare AI">Healthcare &amp; Global Health AI</option>
+              <option value="AI Infrastructure">AI Infrastructure, Compute &amp; Data</option>
+              <option value="Fundamental & Consortium">Fundamental ML &amp; International Consortia</option>
+              <option value="Fellowships & Capacity">Fellowships, Early-Career &amp; National</option>
+            </select>
+          </div>
+
+          <div class="facet-item">
+            <label for="pathwayFilter">How NAAMII Applies</label>
+            <select id="pathwayFilter" class="control-select">
+              <option value="all">All Eligibility Pathways</option>
+              <option value="Direct Lead">🇳🇵 Direct Lead (Nepal Eligible)</option>
+              <option value="Consortium / Co-PI">🤝 Consortium / Co-PI Partner</option>
+              <option value="Compute / Hardware">⚡ Compute / API / Hardware</option>
+              <option value="Individual / Fellowship">🎓 Individual / Fellowship</option>
+            </select>
+          </div>
+
+          <div class="facet-item">
+            <label for="groupFilter">NAAMII Research Group</label>
+            <select id="groupFilter" class="control-select">
+              <option value="all">All NAAMII Groups &amp; Labs</option>
+              <option value="TOGAI / TrAI (Health AI)">TOGAI &amp; TrAI Labs (Health AI)</option>
+              <option value="AI Infra & Compute">AI Infrastructure &amp; Compute</option>
+              <option value="Fundamental ML, NLP & Vision">Fundamental ML, NLP &amp; Vision</option>
+              <option value="Bioinformatics & Microbiome">Bioinformatics, Genomics &amp; AMR</option>
+              <option value="Climate & Remote Sensing">Climate, Cryosphere &amp; Remote Sensing</option>
+              <option value="Education & ANAIS">AI Education (ANAIS &amp; UDAAN)</option>
+            </select>
+          </div>
+
+          <div class="facet-item">
+            <label for="statusFilter">Call Status (2026–2027)</label>
+            <select id="statusFilter" class="control-select">
+              <option value="all">All Statuses</option>
+              <option value="Open Now">Open Now (Active Window)</option>
+              <option value="Rolling">Rolling / Always Open</option>
+              <option value="Upcoming">Upcoming 2027 Cycle</option>
+              <option value="Paused / Watch">Paused / Restructuring Alert</option>
+            </select>
+          </div>
+
+          <div class="facet-item">
+            <label for="amountFilter">Grant Size (USD Equiv.)</label>
+            <select id="amountFilter" class="control-select">
+              <option value="all">Any Funding Size</option>
+              <option value="seed">Up to $50K (Seed / Credits)</option>
+              <option value="mid">$50K – $250K (Project)</option>
+              <option value="large">$250K – $1M (Multi-Year)</option>
+              <option value="mega">$1M+ (Consortium / Hub)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results Status & Reset Bar -->
+        <div class="results-meta-bar">
+          <div class="results-count-wrap">
+            <span id="resultsCountText">Showing <strong>0</strong> grants</span>
+            <span class="shortlist-active-banner hidden" id="shortlistBanner">
+              ★ Viewing Saved Pipeline Shortlist
+            </span>
+          </div>
+          <div class="results-actions">
+            <button type="button" class="link-btn hidden" id="resetFiltersBtn">Reset all filters</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Render Container (Grid, Table, or Timeline) -->
+      <div id="grantsContainer" class="grants-container" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <!-- NAAMII & Nepal Eligibility Playbook -->
+  <section id="playbook" class="playbook-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-badge">Institutional Strategy</span>
+        <h2>NAAMII &amp; Nepal Grant Eligibility Playbook</h2>
+        <p>
+          Nepal holds overlapping international classifications that unlock distinct funding streams when framed strategically.
+        </p>
+      </div>
+
+      <div class="playbook-grid">
+        <article class="playbook-card">
+          <div class="playbook-tag">EU &amp; Bilateral</div>
+          <h3>1. Automatic LMIC Funding in Horizon Europe &amp; SNSF</h3>
+          <p>
+            Under European Commission rules, legal entities established in <strong>Nepal</strong> are automatically eligible for direct EC funding in
+            <strong>Horizon Europe</strong> (Cluster 1 Health &amp; Cluster 4 Digital/AI). Combined with NAAMII's existing EU grant execution track record (<em>UDAAN</em>),
+            European coordinators can add NAAMII as a funded South Asian validation &amp; AI partner at zero extra national co-financing cost. Similarly,
+            Switzerland's <strong>SNSF SPIRIT</strong> funds direct salaries and equipment in Nepal.
+          </p>
+        </article>
+
+        <article class="playbook-card">
+          <div class="playbook-tag">Global Health AI</div>
+          <h3>2. Leveraging 2026–2027 South Asia &amp; Evaluation Shifts</h3>
+          <p>
+            Major global health donors have pivoted from exploratory AI pilots to <strong>locally led clinical evaluation</strong> (e.g., the $60M
+            <strong>EVAH Initiative</strong> and <strong>IDRC AI4GH</strong>), while the UK's <strong>NIHR Global Health Research</strong> explicitly narrowed its geographic focus to
+            <strong>South Asia</strong> and Sub-Saharan Africa. Anchor proposals in NAAMII's <strong>WHO SEARO</strong> collaboration, <strong>NHRC</strong> ethical review, and Nepali teaching hospitals.
+          </p>
+        </article>
+
+        <article class="playbook-card">
+          <div class="playbook-tag">AI Infrastructure</div>
+          <h3>3. Stacking Compute, Datasets &amp; STLC Hardware Grants</h3>
+          <p>
+            Standalone GPU hardware grants are scarce globally, but Nepal is classified by UNESCO/TWAS as a priority
+            <strong>Science &amp; Technology Lagging Country (STLC)</strong>. Stack <strong>TWAS Research Unit Grants</strong> (up to $54K for physical hardware) and
+            <strong>OWSD Fellowships</strong> ($50K incl. equipment) with <strong>NVIDIA Academic GPU Grants</strong>, <strong>Lacuna Fund</strong> dataset calls, and rolling
+            <strong>AWS / GCP / Azure</strong> cloud credits.
+          </p>
+        </article>
+
+        <article class="playbook-card">
+          <div class="playbook-tag">Proposal Readiness</div>
+          <h3>4. Institutional Registrations Checklist for PIs</h3>
+          <p>
+            Many international calls have fast 30–60 day turnarounds. Keep institutional identifiers active:
+            <strong>EU PIC</strong> (Horizon Europe), <strong>SAM.gov UEI &amp; NIH eRA Commons</strong> (Fogarty K43/R21),
+            <strong>ORCID &amp; Fluxx</strong> (Grand Challenges), <strong>ADB CMS</strong> (Digital Health TA), and
+            <strong>501(c)(3) Equivalency Determination (NGOSource)</strong> for US philanthropies (Gates, Mozilla, CZI, McGovern).
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live External Grant Databases Directory -->
+  <section id="databases" class="databases-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-badge">Wider Discovery</span>
+        <h2>Live External Funding Databases &amp; Search Tips for Nepal</h2>
+        <p>
+          Bookmark these primary aggregator portals alongside this radar to catch newly posted rolling RFPs.
+        </p>
+      </div>
+
+      <div class="databases-grid" id="externalPortalsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>NAAMII Grant &amp; Funding Radar</strong>
+        <p>
+          Compiled for researchers affiliated with the Nepal Applied Mathematics and Informatics Institute for Research (NAAMII), Kathmandu, Nepal.
+          Data lives in <code>data/grants.json</code> for collaborative updates via GitHub Pull Requests.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.naamii.org.np/" target="_blank" rel="noopener noreferrer">NAAMII Official Site ↗</a>
+        <a href="https://www.scientifyresearch.org/" target="_blank" rel="noopener noreferrer">ScientifyResearch ↗</a>
+        <a href="./data/grants.json" target="_blank" rel="noopener noreferrer">Raw JSON Dataset ↗</a>
+        <a href="./data/update-log.json" target="_blank" rel="noopener noreferrer">7-Day Sync Log ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grant Detail Slide-Over Drawer -->
+  <div class="drawer-backdrop hidden" id="grantDrawerBackdrop" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-header">
+        <div id="drawerBadges" class="drawer-badges"></div>
+        <button type="button" class="btn btn-icon" id="closeDrawerBtn" aria-label="Close details">✕</button>
+      </div>
+      <div class="drawer-body" id="drawerContent"></div>
+    </aside>
+  </div>
+
+  <!-- Suggest / Add Grant Modal (Generates JSON or GitHub Issue) -->
+  <div class="modal-backdrop hidden" id="submitModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="submitModalTitle">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow-badge">Community Curated</span>
+          <h3 id="submitModalTitle">Add a Funding Call to NAAMII Radar</h3>
+        </div>
+        <button type="button" class="btn btn-icon" id="closeSubmitModalBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="suggestGrantForm" class="modal-body">
+        <p class="modal-helper">
+          Fill out the details below to generate a ready-to-commit JSON entry for <code>data/grants.json</code> (or paste into a GitHub Issue / PR).
+        </p>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label for="sgTitle">Grant / Program Title *</label>
+            <input type="text" id="sgTitle" required placeholder="e.g., Wellcome Digital Mental Health LMIC Call 2027" />
+          </div>
+          <div class="form-field">
+            <label for="sgFunder">Funder Organization *</label>
+            <input type="text" id="sgFunder" required placeholder="e.g., Wellcome Trust" />
+          </div>
+          <div class="form-field">
+            <label for="sgUrl">Official Call URL (https://) *</label>
+            <input type="url" id="sgUrl" required placeholder="https://..." />
+          </div>
+          <div class="form-field">
+            <label for="sgCategory">Category *</label>
+            <select id="sgCategory" required>
+              <option value="Healthcare AI">Healthcare AI</option>
+              <option value="AI Infrastructure">AI Infrastructure</option>
+              <option value="Fundamental & Consortium">Fundamental &amp; Consortium</option>
+              <option value="Fellowships & Capacity">Fellowships &amp; Capacity</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="sgPathway">NAAMII Application Pathway *</label>
+            <select id="sgPathway" required>
+              <option value="Direct Lead">Direct Lead (Nepal Eligible)</option>
+              <option value="Consortium / Co-PI">Consortium / Co-PI</option>
+              <option value="Compute / Hardware">Compute / Hardware</option>
+              <option value="Individual / Fellowship">Individual / Fellowship</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="sgStatus">Status *</label>
+            <select id="sgStatus" required>
+              <option value="Open Now">Open Now</option>
+              <option value="Rolling">Rolling</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Paused / Watch">Paused / Watch</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="sgDeadline">Next Deadline (Optional)</label>
+            <input type="date" id="sgDeadline" />
+          </div>
+          <div class="form-field full">
+            <label for="sgAmount">Funding Amount Display *</label>
+            <input type="text" id="sgAmount" required placeholder="e.g., $100,000 – $500,000 USD" />
+          </div>
+          <div class="form-field full">
+            <label for="sgSummary">Scope &amp; NAAMII Fit Notes *</label>
+            <textarea id="sgSummary" rows="3" required placeholder="Briefly describe what this funds and why it fits NAAMII / Nepal..."></textarea>
+          </div>
+        </div>
+
+        <div class="generated-output hidden" id="generatedJsonWrap">
+          <label for="generatedJson">Generated Entry (Copy into <code>data/grants.json</code> or GitHub PR):</label>
+          <textarea id="generatedJson" rows="6" readonly></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Generate JSON Snippet</button>
+          <button type="button" class="btn btn-outline hidden" id="copyGeneratedJsonBtn">Copy JSON</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <!-- Data fallback bundle for file:// + App Logic -->
+  <script src="./data/grants-data.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

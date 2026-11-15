@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-11-15",
+    "totalGrants": 52,
+    "newGrantsAdded": 52,
+    "deadlinesRolledOver": 0,
+    "callsPromotedOpen": 11,
+    "sources": {
+      "curated_baseline": "ok (52 programs verified)",
+      "weekly_cron_schedule": "Mondays 03:00 UTC (Every 7 days)"
+    }
+  }
+]
