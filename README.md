@@ -39,28 +39,6 @@ The portal updates itself automatically **every 7 days** (`cron: "0 3 * * 1"` �
 
 ---
 
-## Deploying to GitHub Pages
-
-This portal requires **zero build dependencies** and supports both GitHub Pages deployment modes:
-
-### Option A: GitHub Actions (Recommended — Automatic Validation)
-1. Create a new repository on GitHub (e.g., `naamii-grants-portal` or under the NAAMII organization) and push this folder to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial launch of NAAMII Grant & Funding Radar"
-   git branch -M main
-   git remote add origin https://github.com/<YOUR-ORG-OR-USERNAME>/<REPO-NAME>.git
-   git push -u origin main
-   ```
-2. In your GitHub repository, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
-3. The included workflow (`.github/workflows/deploy-pages.yml`) will validate `data/grants.json`, sync the fallback bundle, and publish your live portal at `https://<YOUR-ORG-OR-USERNAME>.github.io/<REPO-NAME>/`.
-
-### Option B: Direct Branch Serving
-- Set **Settings → Pages → Source** to **Deploy from a branch** (`main` / `/ (root)`). Because `.nojekyll` and `index.html` sit at the root, it deploys immediately.
-
----
-
 ## Previewing Locally
 
 - **Instant local open**: Double-click `index.html` in any browser (uses `data/grants-data.js` automatically so there are no `file://` CORS issues).
@@ -78,3 +56,5 @@ This portal requires **zero build dependencies** and supports both GitHub Pages 
    - **Windows PowerShell**: `.\scripts\sync-data.ps1`
    - **Python 3 (macOS/Linux/CI)**: `python3 scripts/sync_and_validate.py`
 3. Alternatively, researchers can submit calls without editing JSON via the repository's **Issues → Suggest a Grant / Funding Call** form (`.github/ISSUE_TEMPLATE/add-grant.yml`).
+
+## Created and curated by Prajwal Ghimire (prajwal.ghimire@naamii.org.np)
