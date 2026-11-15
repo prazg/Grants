@@ -1,0 +1,71 @@
+name: Suggest a Grant / Funding Call
+description: Submit a new research grant, compute credit program, or global health AI call for NAAMII researchers.
+title: "[Grant]: "
+labels: ["new-grant"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand the **NAAMII Grant & Funding Radar**! Fill out the fields below and a maintainer will add it to `data/grants.json`.
+  - type: input
+    id: title
+    attributes:
+      label: Grant / Program Title
+      placeholder: e.g., Wellcome Digital Mental Health LMIC Call 2027
+    validations:
+      required: true
+  - type: input
+    id: funder
+    attributes:
+      label: Funder Organization
+      placeholder: e.g., Wellcome Trust / IDRC / NVIDIA
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official Call URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Domain Category
+      options:
+        - Healthcare AI
+        - AI Infrastructure
+        - Fundamental & Consortium
+        - Fellowships & Capacity
+    validations:
+      required: true
+  - type: dropdown
+    id: pathway
+    attributes:
+      label: How NAAMII / Nepal Researchers Apply
+      options:
+        - Direct Lead
+        - Consortium / Co-PI
+        - Compute / Hardware
+        - Individual / Fellowship
+    validations:
+      required: true
+  - type: input
+    id: amount
+    attributes:
+      label: Funding Range / Compute Credits
+      placeholder: e.g., $100,000 – $500,000 USD or 10,000 H100 GPU Hours
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Next Deadline (YYYY-MM-DD or Rolling)
+      placeholder: e.g., 2027-03-15 or Rolling
+  - type: textarea
+    id: notes
+    attributes:
+      label: Scope, Nepal Eligibility & NAAMII Lab Fit
+      placeholder: Briefly note why this fits NAAMII (e.g., TOGAI, TrAI, AI Infra, NLP, Bioinformatics, ANAIS) and any eligibility constraints.
+    validations:
+      required: true
