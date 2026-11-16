@@ -1,13 +1,26 @@
-// Auto-generated from data/grants.json
+// Auto-generated from data/grants.json by scripts/sync_and_validate.py
+// Edit data/grants.json directly and run `python scripts/sync_and_validate.py`.
 window.NAAMII_PORTAL_DATA = {
   "metadata": {
     "portalName": "NAAMII Grant & Funding Radar",
     "organization": "Nepal Applied Mathematics and Informatics Institute for Research (NAAMII)",
     "countryContext": "Nepal (LMIC / ODA-Eligible South Asia / UNESCO-TWAS STLC)",
-    "lastUpdated": "2026-11-15",
-    "nextScheduledUpdate": "2026-11-22",
+    "lastUpdated": "2026-11-16",
+    "nextScheduledUpdate": "2026-11-23",
     "updateIntervalDays": 7,
-    "version": "2026.11"
+    "version": "2026.11",
+    "lastSyncStats": {
+      "syncedAtUtc": "2026-11-16T10:22:55Z",
+      "newGrantsAdded": 1,
+      "deadlinesRolledOver": 0,
+      "callsPromotedOpen": 0,
+      "sources": {
+        "nih_guide_rss": "ok (0 matches)",
+        "ukri_rss": "ok (0 matches)",
+        "grants_gov_api": "ok (1 matches)",
+        "apnic_foundation_rss": "ok (0 matches)"
+      }
+    }
   },
   "externalPortals": [
     {
@@ -66,8 +79,14 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Gates Foundation, Wellcome & Novo Nordisk Foundation",
       "funderType": "Philanthropic Consortium",
       "category": "Healthcare AI",
-      "subcategories": ["Clinical Evaluation", "Primary Care", "Diagnostics & Triage"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "Clinical Evaluation",
+        "Primary Care",
+        "Diagnostics & Triage"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Direct Lead",
       "status": "Open Now",
       "deadline": "2027-01-31",
@@ -87,8 +106,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Mozilla Foundation",
       "funderType": "Tech Philanthropy",
       "category": "AI Infrastructure",
-      "subcategories": ["Open-Source Models", "Small/Edge AI", "Community Infrastructure"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "Open-Source Models",
+        "Small/Edge AI",
+        "Community Infrastructure"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Direct Lead",
       "status": "Open Now",
       "deadline": "2027-01-15",
@@ -108,8 +135,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "IDRC (International Development Research Centre, Canada)",
       "funderType": "Bilateral Development Agency",
       "category": "Healthcare AI",
-      "subcategories": ["Health Systems", "Maternal & Child Health", "Epidemic Preparedness", "Responsible AI"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Health Systems",
+        "Maternal & Child Health",
+        "Epidemic Preparedness",
+        "Responsible AI"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-04-30",
@@ -129,8 +164,18 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Swiss National Science Foundation (SNSF)",
       "funderType": "Public Research Council",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Medical Imaging", "Machine Learning", "Bioinformatics", "Cryosphere & Climate"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Fundamental ML, NLP & Vision", "Climate & Remote Sensing", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Medical Imaging",
+        "Machine Learning",
+        "Bioinformatics",
+        "Cryosphere & Climate"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Fundamental ML, NLP & Vision",
+        "Climate & Remote Sensing",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Open Now",
       "deadline": "2026-12-01",
@@ -150,8 +195,18 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Lacuna Fund (Rockefeller, Google.org, IDRC, GIZ)",
       "funderType": "Philanthropic Consortium",
       "category": "AI Infrastructure",
-      "subcategories": ["Open Datasets", "Low-Resource NLP", "Health Data", "Climate & Agriculture"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Open Datasets",
+        "Low-Resource NLP",
+        "Health Data",
+        "Climate & Agriculture"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-15",
@@ -171,8 +226,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "NIH / Fogarty International Center (USA)",
       "funderType": "Public Research Council",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Career Development", "Biomedical AI", "Global Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Career Development",
+        "Biomedical AI",
+        "Global Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Open Now",
       "deadline": "2026-12-03",
@@ -192,8 +254,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "European Commission (Horizon Europe Cluster 1)",
       "funderType": "Multilateral / EU",
       "category": "Healthcare AI",
-      "subcategories": ["Predictive Biomarkers", "Medical Imaging", "Multi-Modal AI", "NCDs"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Predictive Biomarkers",
+        "Medical Imaging",
+        "Multi-Modal AI",
+        "NCDs"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Open Now",
       "deadline": "2027-02-17",
@@ -213,8 +283,14 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "European Commission (Horizon Europe Cluster 1)",
       "funderType": "Multilateral / EU",
       "category": "Healthcare AI",
-      "subcategories": ["Clinical Decision Support", "Patient Safety", "Health Data Analytics"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "Clinical Decision Support",
+        "Patient Safety",
+        "Health Data Analytics"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Open Now",
       "deadline": "2027-02-17",
@@ -234,8 +310,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "National Institute for Health and Care Research (NIHR, UK)",
       "funderType": "Public Research Council",
       "category": "Healthcare AI",
-      "subcategories": ["Health Systems", "Primary Care Triage", "AMR", "Climate & Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Health Systems",
+        "Primary Care Triage",
+        "AMR",
+        "Climate & Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-03-31",
@@ -255,8 +340,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "The World Academy of Sciences (TWAS / UNESCO) & Sida",
       "funderType": "Multilateral / Science Academy",
       "category": "AI Infrastructure",
-      "subcategories": ["Scientific Equipment", "Compute Hardware", "Lab Capacity", "MSc Support"],
-      "naamiiGroups": ["AI Infra & Compute", "Bioinformatics & Microbiome", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "Scientific Equipment",
+        "Compute Hardware",
+        "Lab Capacity",
+        "MSc Support"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Bioinformatics & Microbiome",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-04-15",
@@ -276,8 +370,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "APNIC Foundation",
       "funderType": "Regional Tech Foundation",
       "category": "AI Infrastructure",
-      "subcategories": ["Digital Infrastructure", "Network & Compute", "Digital Inclusion", "Open Source"],
-      "naamiiGroups": ["AI Infra & Compute", "Education & ANAIS"],
+      "subcategories": [
+        "Digital Infrastructure",
+        "Network & Compute",
+        "Digital Inclusion",
+        "Open Source"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Education & ANAIS"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-04-20",
@@ -297,8 +399,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "NVIDIA",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["GPU Hardware", "H100 Cloud Compute", "Medical Imaging", "Robotics & Edge AI"],
-      "naamiiGroups": ["AI Infra & Compute", "TOGAI / TrAI (Health AI)", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "GPU Hardware",
+        "H100 Cloud Compute",
+        "Medical Imaging",
+        "Robotics & Edge AI"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "TOGAI / TrAI (Health AI)",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -318,8 +429,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Amazon Web Services (AWS)",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["Cloud GPU Credits", "Open Datasets", "Science-as-a-Service"],
-      "naamiiGroups": ["AI Infra & Compute", "TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "Cloud GPU Credits",
+        "Open Datasets",
+        "Science-as-a-Service"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -339,8 +459,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Google Research / Google Cloud",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["TPU / GPU Compute", "Vertex AI", "Earth Engine"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision", "Climate & Remote Sensing", "TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "TPU / GPU Compute",
+        "Vertex AI",
+        "Earth Engine"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision",
+        "Climate & Remote Sensing",
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -360,8 +489,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Wellcome Trust (UK)",
       "funderType": "Philanthropic Foundation",
       "category": "Healthcare AI",
-      "subcategories": ["Biomedical Data Science", "Infectious Disease", "Pathogen Genomics", "Global Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Biomedical Data Science",
+        "Infectious Disease",
+        "Pathogen Genomics",
+        "Global Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Rolling",
       "deadline": null,
@@ -381,8 +518,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Wellcome Trust (UK)",
       "funderType": "Philanthropic Foundation",
       "category": "Healthcare AI",
-      "subcategories": ["Climate & Health", "Dengue & Vector Surveillance", "Open-Source Health Software"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Climate & Health",
+        "Dengue & Vector Surveillance",
+        "Open-Source Health Software"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-30",
@@ -402,8 +547,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Gates Foundation & Grand Challenges Network",
       "funderType": "Philanthropic Foundation",
       "category": "Healthcare AI",
-      "subcategories": ["LLMs in Healthcare", "Frontline Health Workers", "Maternal & Neonatal Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "LLMs in Healthcare",
+        "Frontline Health Workers",
+        "Maternal & Neonatal Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-03-15",
@@ -423,8 +575,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Grand Challenges Canada (Funded by Government of Canada)",
       "funderType": "Bilateral Innovation Fund",
       "category": "Healthcare AI",
-      "subcategories": ["Climate-Responsive Care", "Youth Mental Health", "Point-of-Care Diagnostics"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Climate-Responsive Care",
+        "Youth Mental Health",
+        "Point-of-Care Diagnostics"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-04-10",
@@ -444,8 +603,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Mozilla Foundation",
       "funderType": "Tech Philanthropy",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Trustworthy AI", "Public-Interest Tech", "AI Governance & Health Equity"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Education & ANAIS"],
+      "subcategories": [
+        "Trustworthy AI",
+        "Public-Interest Tech",
+        "AI Governance & Health Equity"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Education & ANAIS"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Open Now",
       "deadline": "2026-12-20",
@@ -465,8 +632,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "GSMA Mobile for Development & UK FCDO",
       "funderType": "Bilateral / Industry Fund",
       "category": "AI Infrastructure",
-      "subcategories": ["Mobile & Edge AI", "Digital Inclusion", "Socio-Economic Resilience"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "Mobile & Edge AI",
+        "Digital Inclusion",
+        "Socio-Economic Resilience"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Direct Lead",
       "status": "Open Now",
       "deadline": "2026-12-15",
@@ -486,8 +660,14 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "NIH / Fogarty International Center, NIBIB & NIMH",
       "funderType": "Public Research Council",
       "category": "Healthcare AI",
-      "subcategories": ["mHealth", "Point-of-Care Imaging", "Clinical Triage"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "mHealth",
+        "Point-of-Care Imaging",
+        "Clinical Triage"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-02-21",
@@ -507,8 +687,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "WHO Special Programme for Research & Training in Tropical Diseases (TDR) / SEARO",
       "funderType": "UN / Multilateral",
       "category": "Healthcare AI",
-      "subcategories": ["Implementation Science", "Tropical Diseases", "AMR", "Rural Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Implementation Science",
+        "Tropical Diseases",
+        "AMR",
+        "Rural Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-01",
@@ -528,8 +716,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Organization for Women in Science for the Developing World (UNESCO / IDRC)",
       "funderType": "Multilateral / Science Academy",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Women in STEM", "Lab Equipment", "Research Group Leadership"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome", "Fundamental ML, NLP & Vision", "AI Infra & Compute"],
+      "subcategories": [
+        "Women in STEM",
+        "Lab Equipment",
+        "Research Group Leadership"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome",
+        "Fundamental ML, NLP & Vision",
+        "AI Infra & Compute"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Upcoming",
       "deadline": "2027-04-30",
@@ -549,8 +746,18 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Google.org",
       "funderType": "Corporate Philanthropy",
       "category": "Healthcare AI",
-      "subcategories": ["AI for Science", "Public Health", "Climate Resilience", "Engineering Pro-Bono"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing", "Bioinformatics & Microbiome", "AI Infra & Compute"],
+      "subcategories": [
+        "AI for Science",
+        "Public Health",
+        "Climate Resilience",
+        "Engineering Pro-Bono"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing",
+        "Bioinformatics & Microbiome",
+        "AI Infra & Compute"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-06-15",
@@ -570,8 +777,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Amazon Science",
       "funderType": "Corporate Tech / Compute",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Computer Vision", "Agentic AI", "AI Safety & Fairness", "Sustainability"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "AI Infra & Compute", "TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "Computer Vision",
+        "Agentic AI",
+        "AI Safety & Fairness",
+        "Sustainability"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "AI Infra & Compute",
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-07",
@@ -591,8 +807,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Microsoft Philanthropies / AI for Good Research Lab",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["Azure GPU Credits", "AI for Health", "AI for Earth", "Glacier & Flood ML"],
-      "naamiiGroups": ["AI Infra & Compute", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Azure GPU Credits",
+        "AI for Health",
+        "AI for Earth",
+        "Glacier & Flood ML"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -612,8 +837,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Meta AI",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["Open-Weights LLMs", "Nepali NLP", "Public Health & Education"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Education & ANAIS"],
+      "subcategories": [
+        "Open-Weights LLMs",
+        "Nepali NLP",
+        "Public Health & Education"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Education & ANAIS"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-06-30",
@@ -633,8 +866,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "The Royal Society (UK)",
       "funderType": "Science Academy",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Seed Collaboration", "Bilateral Travel", "Computer Science & Bio-AI"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Seed Collaboration",
+        "Bilateral Travel",
+        "Computer Science & Bio-AI"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Open Now",
       "deadline": "2027-03-11",
@@ -654,8 +895,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "International Human Frontier Science Program Organization",
       "funderType": "Multilateral Science Org",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Computational Biology", "Complex Systems", "Bio-AI & Neuroscience"],
-      "naamiiGroups": ["Bioinformatics & Microbiome", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "Computational Biology",
+        "Complex Systems",
+        "Bio-AI & Neuroscience"
+      ],
+      "naamiiGroups": [
+        "Bioinformatics & Microbiome",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-03-18",
@@ -675,8 +923,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "The Pfizer Foundation & Innovations in Healthcare",
       "funderType": "Corporate Philanthropy",
       "category": "Healthcare AI",
-      "subcategories": ["Primary Care Delivery", "Infectious Diseases & AMR", "Oncology & Maternal Health"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Primary Care Delivery",
+        "Infectious Diseases & AMR",
+        "Oncology & Maternal Health"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-20",
@@ -696,8 +951,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Chan Zuckerberg Initiative",
       "funderType": "Tech Philanthropy",
       "category": "Healthcare AI",
-      "subcategories": ["Medical & Microscopy Imaging", "Open-Source Bio Software", "Single-Cell AI"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome", "AI Infra & Compute"],
+      "subcategories": [
+        "Medical & Microscopy Imaging",
+        "Open-Source Bio Software",
+        "Single-Cell AI"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome",
+        "AI Infra & Compute"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-06-01",
@@ -717,8 +980,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Wellcome Leap",
       "funderType": "ARPA-Style Health Fund",
       "category": "Healthcare AI",
-      "subcategories": ["High-Risk Bio-AI", "Human Microbiome", "Women's Health", "Surgical & Clinical AI"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "High-Risk Bio-AI",
+        "Human Microbiome",
+        "Women's Health",
+        "Surgical & Clinical AI"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-04-01",
@@ -738,8 +1009,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Abdul Latif Jameel Poverty Action Lab (J-PAL)",
       "funderType": "Academic Evaluation Network",
       "category": "Fellowships & Capacity",
-      "subcategories": ["AI Impact Evaluation", "Randomized Controlled Trials", "Health & Education AI"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Education & ANAIS"],
+      "subcategories": [
+        "AI Impact Evaluation",
+        "Randomized Controlled Trials",
+        "Health & Education AI"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Education & ANAIS"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-03-30",
@@ -759,8 +1037,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "OpenAI",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["API Credits", "Multilingual Safety", "Clinical LLM Benchmarking"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)"],
+      "subcategories": [
+        "API Credits",
+        "Multilingual Safety",
+        "Clinical LLM Benchmarking"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -780,8 +1066,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Anthropic",
       "funderType": "Corporate Tech / Compute",
       "category": "AI Infrastructure",
-      "subcategories": ["API Credits", "AI Safety & Alignment", "AI for Science"],
-      "naamiiGroups": ["AI Infra & Compute", "Fundamental ML, NLP & Vision", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "API Credits",
+        "AI Safety & Alignment",
+        "AI for Science"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Fundamental ML, NLP & Vision",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Compute / Hardware",
       "status": "Rolling",
       "deadline": null,
@@ -801,8 +1095,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "UNICEF Office of Innovation",
       "funderType": "UN / Multilateral",
       "category": "Healthcare AI",
-      "subcategories": ["Open-Source AI", "Child & Maternal Health", "FemTech", "EdTech"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Education & ANAIS"],
+      "subcategories": [
+        "Open-Source AI",
+        "Child & Maternal Health",
+        "FemTech",
+        "EdTech"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Education & ANAIS"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-04-25",
@@ -822,8 +1124,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "BMZ / GIZ Germany & Digital Public Goods Ecosystem",
       "funderType": "Bilateral Development Agency",
       "category": "AI Infrastructure",
-      "subcategories": ["Open Voice & NLP", "Digital Public Infrastructure", "Ethical AI Policy"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "AI Infra & Compute", "Education & ANAIS"],
+      "subcategories": [
+        "Open Voice & NLP",
+        "Digital Public Infrastructure",
+        "Ethical AI Policy"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "AI Infra & Compute",
+        "Education & ANAIS"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-05-15",
@@ -843,8 +1153,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Google Research",
       "funderType": "Corporate Tech / Compute",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Trustworthy AI", "Climate & Health", "Computing Frontiers"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Trustworthy AI",
+        "Climate & Health",
+        "Computing Frontiers"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-07-30",
@@ -864,8 +1182,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "APNIC Foundation",
       "funderType": "Regional Tech Foundation",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Digital Infrastructure Policy", "Compute & Connectivity", "Cybersecurity"],
-      "naamiiGroups": ["AI Infra & Compute", "Education & ANAIS"],
+      "subcategories": [
+        "Digital Infrastructure Policy",
+        "Compute & Connectivity",
+        "Cybersecurity"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "Education & ANAIS"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Upcoming",
       "deadline": "2027-05-10",
@@ -885,8 +1210,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Fondation Botnar (Switzerland)",
       "funderType": "Philanthropic Foundation",
       "category": "Healthcare AI",
-      "subcategories": ["Youth Mental Health", "Urban Digital Health", "Participatory AI"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Education & ANAIS"],
+      "subcategories": [
+        "Youth Mental Health",
+        "Urban Digital Health",
+        "Participatory AI"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Education & ANAIS"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-06-30",
@@ -906,8 +1238,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Patrick J. McGovern Foundation",
       "funderType": "Tech Philanthropy",
       "category": "AI Infrastructure",
-      "subcategories": ["Non-Profit Data Infra", "Health Equity", "Climate & Crisis AI"],
-      "naamiiGroups": ["AI Infra & Compute", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Non-Profit Data Infra",
+        "Health Equity",
+        "Climate & Crisis AI"
+      ],
+      "naamiiGroups": [
+        "AI Infra & Compute",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-07-15",
@@ -927,8 +1267,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Schmidt Sciences",
       "funderType": "Tech Philanthropy",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Beneficial AI", "Global South AI Equity", "Interpretability & Science"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Beneficial AI",
+        "Global South AI Equity",
+        "Interpretability & Science"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-06-01",
@@ -948,8 +1296,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Nepal Health Research Council (Government of Nepal)",
       "funderType": "National Government Body",
       "category": "Fellowships & Capacity",
-      "subcategories": ["National Health Priority", "Clinical Digital Pilots", "IRB / ERB Ecosystem"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "National Health Priority",
+        "Clinical Digital Pilots",
+        "IRB / ERB Ecosystem"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-08-15",
@@ -969,8 +1324,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "NAST & University Grants Commission (UGC) Nepal",
       "funderType": "National Government Body",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Young Scientists", "National S&T Innovation", "University Collaboration"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Climate & Remote Sensing", "Education & ANAIS"],
+      "subcategories": [
+        "Young Scientists",
+        "National S&T Innovation",
+        "University Collaboration"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing",
+        "Education & ANAIS"
+      ],
       "pathway": "Direct Lead",
       "status": "Upcoming",
       "deadline": "2027-09-01",
@@ -990,8 +1354,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "The Spencer Foundation",
       "funderType": "Philanthropic Foundation",
       "category": "Fellowships & Capacity",
-      "subcategories": ["AI in Education", "Digital Literacy", "STEM Pedagogy"],
-      "naamiiGroups": ["Education & ANAIS", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "AI in Education",
+        "Digital Literacy",
+        "STEM Pedagogy"
+      ],
+      "naamiiGroups": [
+        "Education & ANAIS",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Direct Lead",
       "status": "Paused / Watch",
       "deadline": "2027-06-30",
@@ -1011,8 +1382,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Alexander von Humboldt Foundation (Germany)",
       "funderType": "Public Foundation",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Postdoc & Experienced Mobility", "SDG Research", "Return Equipment Subsidies"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing", "Fundamental ML, NLP & Vision"],
+      "subcategories": [
+        "Postdoc & Experienced Mobility",
+        "SDG Research",
+        "Return Equipment Subsidies"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing",
+        "Fundamental ML, NLP & Vision"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Paused / Watch",
       "deadline": null,
@@ -1032,8 +1411,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "European Commission (Horizon Europe Cluster 4 — Digital)",
       "funderType": "Multilateral / EU",
       "category": "AI Infrastructure",
-      "subcategories": ["Trustworthy AI", "Multilingual Foundation Models", "Edge & Green AI", "Robotics"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "AI Infra & Compute", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Trustworthy AI",
+        "Multilingual Foundation Models",
+        "Edge & Green AI",
+        "Robotics"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "AI Infra & Compute",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Open Now",
       "deadline": "2027-03-18",
@@ -1053,8 +1441,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "UKRI, British Council & UK Department for Science, Innovation and Technology",
       "funderType": "Bilateral / Public Research Council",
       "category": "Fundamental & Consortium",
-      "subcategories": ["Health Tech", "Resilient Planet", "Transformative AI Tech", "Early Career"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing", "Education & ANAIS"],
+      "subcategories": [
+        "Health Tech",
+        "Resilient Planet",
+        "Transformative AI Tech",
+        "Early Career"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing",
+        "Education & ANAIS"
+      ],
       "pathway": "Consortium / Co-PI",
       "status": "Upcoming",
       "deadline": "2027-03-25",
@@ -1074,8 +1471,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "CIFAR (Canadian Institute for Advanced Research) & Azrieli Foundation",
       "funderType": "Research Institute / Philanthropy",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Unrestricted Research Support", "Learning in Machines & Brains", "Healthy Microbiomes"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "Bioinformatics & Microbiome"],
+      "subcategories": [
+        "Unrestricted Research Support",
+        "Learning in Machines & Brains",
+        "Healthy Microbiomes"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "Bioinformatics & Microbiome"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Upcoming",
       "deadline": "2027-11-01",
@@ -1095,8 +1499,17 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Schlumberger Foundation",
       "funderType": "Corporate Philanthropy",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Women in AI & STEM", "PhD & Postdoc Mobility", "Brain Circulation"],
-      "naamiiGroups": ["Fundamental ML, NLP & Vision", "TOGAI / TrAI (Health AI)", "Bioinformatics & Microbiome", "Education & ANAIS"],
+      "subcategories": [
+        "Women in AI & STEM",
+        "PhD & Postdoc Mobility",
+        "Brain Circulation"
+      ],
+      "naamiiGroups": [
+        "Fundamental ML, NLP & Vision",
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome",
+        "Education & ANAIS"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Upcoming",
       "deadline": "2027-11-05",
@@ -1116,8 +1529,15 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "The Elsevier Foundation & OWSD / The Lancet",
       "funderType": "Corporate Philanthropy",
       "category": "Fellowships & Capacity",
-      "subcategories": ["Inclusive Health", "Climate Action", "Women in Science"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "Climate & Remote Sensing"],
+      "subcategories": [
+        "Inclusive Health",
+        "Climate Action",
+        "Women in Science"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Individual / Fellowship",
       "status": "Open Now",
       "deadline": "2027-02-28",
@@ -1137,8 +1557,16 @@ window.NAAMII_PORTAL_DATA = {
       "funder": "Asian Development Bank (ADB) / Digital Technology for Development",
       "funderType": "Multilateral Development Bank",
       "category": "Healthcare AI",
-      "subcategories": ["National Digital Health", "Public Sector AI", "Telemedicine Infrastructure"],
-      "naamiiGroups": ["TOGAI / TrAI (Health AI)", "AI Infra & Compute", "Climate & Remote Sensing"],
+      "subcategories": [
+        "National Digital Health",
+        "Public Sector AI",
+        "Telemedicine Infrastructure"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "AI Infra & Compute",
+        "Climate & Remote Sensing"
+      ],
       "pathway": "Direct Lead",
       "status": "Rolling",
       "deadline": null,
@@ -1151,6 +1579,35 @@ window.NAAMII_PORTAL_DATA = {
       "naamiiStrategy": "Register NAAMII on ADB's CMS portal to bid on Technical Assistance (TA) packages for Nepal Ministry of Health & Population digital health and climate-risk AI studies.",
       "fitScore": 88,
       "url": "https://www.adb.org/what-we-do/themes/digital-technology"
+    },
+    {
+      "id": "ggov-par-26-040-advancing-bioinformatics-translat",
+      "title": "Advancing Bioinformatics, Translational Bioinformatics and Computational Biology Research (R01 Clinical Trial Optional)",
+      "funder": "U.S. Federal Agency",
+      "funderType": "Public Agency (Grants.gov)",
+      "category": "Healthcare AI",
+      "subcategories": [
+        "Global Health & Tech",
+        "Auto-Discovered"
+      ],
+      "naamiiGroups": [
+        "TOGAI / TrAI (Health AI)",
+        "Bioinformatics & Microbiome"
+      ],
+      "pathway": "Consortium / Co-PI",
+      "status": "Open Now",
+      "deadline": "2029-03-05",
+      "deadlineDisplay": "2029-03-05",
+      "amountMin": 100000,
+      "amountMax": 750000,
+      "amountDisplay": "See Grants.gov Synopsis",
+      "nepalEligibility": "Verify foreign organization eligibility in Section III of the Grants.gov synopsis (direct LMIC award vs. subaward).",
+      "summary": "Live federal funding opportunity (PAR-26-040) posted by U.S. Federal Agency matching global health / AI search criteria.",
+      "naamiiStrategy": "Auto-discovered via weekly Grants.gov API scan. Ensure SAM.gov UEI registration is active before applying.",
+      "fitScore": 86,
+      "url": "https://www.grants.gov/search-results-detail/359003",
+      "autoDiscovered": true,
+      "discoveredAt": "2026-11-16"
     }
   ]
 };

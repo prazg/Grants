@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-16",
+    "totalGrants": 53,
+    "newGrantsAdded": 1,
+    "deadlinesRolledOver": 0,
+    "callsPromotedOpen": 0,
+    "sources": {
+      "nih_guide_rss": "ok (0 matches)",
+      "ukri_rss": "ok (0 matches)",
+      "grants_gov_api": "ok (1 matches)",
+      "apnic_foundation_rss": "ok (0 matches)"
+    }
+  },
+  {
     "date": "2026-11-15",
     "totalGrants": 52,
     "newGrantsAdded": 52,
